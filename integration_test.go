@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/Noobygames/amqp
 
 // +build integration
 
@@ -117,7 +117,7 @@ func TestIntegrationLocalAddr(t *testing.T) {
 	t.Logf("Connected to port %d\n", port)
 }
 
-// https://github.com/streadway/amqp/issues/94
+// https://github.com/Noobygames/amqp/issues/94
 func TestExchangePassiveOnMissingExchangeShouldError(t *testing.T) {
 	c := integrationConnection(t, "exch")
 	if c != nil {
@@ -143,7 +143,7 @@ func TestExchangePassiveOnMissingExchangeShouldError(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/94
+// https://github.com/Noobygames/amqp/issues/94
 func TestIntegrationExchangeDeclarePassiveOnDeclaredShouldNotError(t *testing.T) {
 	c := integrationConnection(t, "exch")
 	if c != nil {
@@ -221,7 +221,7 @@ func TestIntegrationExchange(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/94
+// https://github.com/Noobygames/amqp/issues/94
 func TestIntegrationQueueDeclarePassiveOnMissingExchangeShouldError(t *testing.T) {
 	c := integrationConnection(t, "queue")
 	if c != nil {
@@ -246,7 +246,7 @@ func TestIntegrationQueueDeclarePassiveOnMissingExchangeShouldError(t *testing.T
 	}
 }
 
-// https://github.com/streadway/amqp/issues/94
+// https://github.com/Noobygames/amqp/issues/94
 func TestIntegrationPassiveQueue(t *testing.T) {
 	c := integrationConnection(t, "queue")
 	if c != nil {
@@ -554,7 +554,7 @@ func TestIntegrationMeaningfulChannelErrors(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/6
+// https://github.com/Noobygames/amqp/issues/6
 func TestIntegrationNonBlockingClose(t *testing.T) {
 	c := integrationConnection(t, "#6")
 	if c != nil {
@@ -1183,7 +1183,7 @@ func TestIntegrationConfirm(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/61
+// https://github.com/Noobygames/amqp/issues/61
 func TestRoundTripAllFieldValueTypes61(t *testing.T) {
 	if conn := integrationConnection(t, "issue61"); conn != nil {
 		defer conn.Close()
@@ -1255,7 +1255,7 @@ func TestRoundTripAllFieldValueTypes61(t *testing.T) {
 // Declares a queue with the x-message-ttl extension to exercise integer
 // serialization.
 //
-// Relates to https://github.com/streadway/amqp/issues/60
+// Relates to https://github.com/Noobygames/amqp/issues/60
 //
 func TestDeclareArgsXMessageTTL(t *testing.T) {
 	if conn := integrationConnection(t, "declareTTL"); conn != nil {
@@ -1274,7 +1274,7 @@ func TestDeclareArgsXMessageTTL(t *testing.T) {
 // Sets up the topology where rejected messages will be forwarded
 // to a fanout exchange, with a single queue bound.
 //
-// Relates to https://github.com/streadway/amqp/issues/56
+// Relates to https://github.com/Noobygames/amqp/issues/56
 //
 func TestDeclareArgsRejectToDeadLetterQueue(t *testing.T) {
 	if conn := integrationConnection(t, "declareArgs"); conn != nil {
@@ -1352,7 +1352,7 @@ func TestDeclareArgsRejectToDeadLetterQueue(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/48
+// https://github.com/Noobygames/amqp/issues/48
 func TestDeadlockConsumerIssue48(t *testing.T) {
 	if conn := integrationConnection(t, "issue48"); conn != nil {
 		defer conn.Close()
@@ -1415,7 +1415,7 @@ func TestDeadlockConsumerIssue48(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/46
+// https://github.com/Noobygames/amqp/issues/46
 func TestRepeatedChannelExceptionWithPublishAndMaxProcsIssue46(t *testing.T) {
 	conn := integrationConnection(t, "issue46")
 	if conn != nil {
@@ -1437,7 +1437,7 @@ func TestRepeatedChannelExceptionWithPublishAndMaxProcsIssue46(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/43
+// https://github.com/Noobygames/amqp/issues/43
 func TestChannelExceptionWithCloseIssue43(t *testing.T) {
 	conn := integrationConnection(t, "issue43")
 	if conn != nil {
@@ -1490,7 +1490,7 @@ func TestChannelExceptionWithCloseIssue43(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/7
+// https://github.com/Noobygames/amqp/issues/7
 func TestCorruptedMessageIssue7(t *testing.T) {
 	messageCount := 1024
 
@@ -1547,7 +1547,7 @@ func TestCorruptedMessageIssue7(t *testing.T) {
 	}
 }
 
-// https://github.com/streadway/amqp/issues/136
+// https://github.com/Noobygames/amqp/issues/136
 func TestChannelCounterShouldNotPanicIssue136(t *testing.T) {
 	if c := integrationConnection(t, "issue136"); c != nil {
 		defer c.Close()

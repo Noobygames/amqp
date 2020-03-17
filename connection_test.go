@@ -1,7 +1,7 @@
 // Copyright (c) 2016, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/Noobygames/amqp
 
 // +build integration
 
@@ -66,7 +66,7 @@ func TestChannelOpenOnAClosedConnectionFails_ReleasesAllocatedChannel(t *testing
 // TestRaceBetweenChannelAndConnectionClose ensures allocating a new channel
 // does not race with shutting the connection down.
 //
-// See https://github.com/streadway/amqp/issues/251 - thanks to jmalloc for the
+// See https://github.com/Noobygames/amqp/issues/251 - thanks to jmalloc for the
 // test case.
 func TestRaceBetweenChannelAndConnectionClose(t *testing.T) {
 	defer time.AfterFunc(10*time.Second, func() { panic("Close deadlock") }).Stop()
@@ -88,7 +88,7 @@ func TestRaceBetweenChannelAndConnectionClose(t *testing.T) {
 // (channel.shutdown) does not race with calling channel.send() from any other
 // goroutines.
 //
-// See https://github.com/streadway/amqp/pull/253#issuecomment-292464811 for
+// See https://github.com/Noobygames/amqp/pull/253#issuecomment-292464811 for
 // more details - thanks to jmalloc again.
 func TestRaceBetweenChannelShutdownAndSend(t *testing.T) {
 	defer time.AfterFunc(10*time.Second, func() { panic("Close deadlock") }).Stop()

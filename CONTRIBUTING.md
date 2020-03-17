@@ -7,7 +7,7 @@
 
 The workflow is pretty standard:
 
-1. Fork github.com/streadway/amqp
+1. Fork github.com/Noobygames/amqp
 1. Add the pre-commit hook: `ln -s ../../pre-commit .git/hooks/pre-commit`
 1. Create your feature branch (`git checkout -b my-new-feature`)
 1. Run integration tests (see below)

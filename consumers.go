@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/Noobygames/amqp
 
 package amqp
 
@@ -26,7 +26,7 @@ func commandNameBasedUniqueConsumerTag(commandName string) string {
 	tagSuffix := "-" + strconv.FormatUint(atomic.AddUint64(&consumerSeq, 1), 10)
 
 	if len(tagPrefix)+len(tagInfix)+len(tagSuffix) > consumerTagLengthMax {
-		tagInfix = "streadway/amqp"
+		tagInfix = "Noobygames/amqp"
 	}
 
 	return tagPrefix + tagInfix + tagSuffix

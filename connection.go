@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/Noobygames/amqp
 
 package amqp
 
@@ -23,7 +23,7 @@ const (
 
 	defaultHeartbeat         = 10 * time.Second
 	defaultConnectionTimeout = 30 * time.Second
-	defaultProduct           = "https://github.com/streadway/amqp"
+	defaultProduct           = "https://github.com/Noobygames/amqp"
 	defaultVersion           = "β"
 	// Safer default that makes channel leaks a lot easier to spot
 	// before they create operational headaches. See https://github.com/rabbitmq/rabbitmq-server/issues/1593.

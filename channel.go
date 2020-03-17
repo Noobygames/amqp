@@ -1,7 +1,7 @@
 // Copyright (c) 2012, Sean Treadway, SoundCloud Ltd.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// Source code and contact info at http://github.com/streadway/amqp
+// Source code and contact info at http://github.com/Noobygames/amqp
 
 package amqp
 
@@ -323,6 +323,14 @@ func (ch *Channel) dispatch(msg message) {
 		}
 
 	case *basicNack:
+		// send the NACK also on the return channel, so that the sequence there is always preserved
+		ret := newAckReturn(false, m.DeliveryTag, m.Multiple, m.Requeue)
+		ch.notifyM.RLock()
+		for _, c := range ch.returns {
+			c <- *ret
+		}
+		ch.notifyM.RUnlock()
+
 		if ch.confirming {
 			if m.Multiple {
 				ch.confirms.Multiple(Confirmation{m.DeliveryTag, false})
