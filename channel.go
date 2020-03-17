@@ -307,6 +307,13 @@ func (ch *Channel) dispatch(msg message) {
 		ch.notifyM.RUnlock()
 
 	case *basicAck:
+		ret := newAckReturn(true, m.DeliveryTag, m.Multiple, false)
+		ch.notifyM.RLock()
+		for _, c := range ch.returns {
+			c <- *ret
+		}
+		ch.notifyM.RUnlock()
+
 		if ch.confirming {
 			if m.Multiple {
 				ch.confirms.Multiple(Confirmation{m.DeliveryTag, true})
